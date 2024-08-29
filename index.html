@@ -18,6 +18,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            position: relative;
         }
 
         .overlay {
@@ -35,8 +36,8 @@
             text-align: center;
             width: 80%;
             max-width: 800px;
+            position: relative;
         }
-
 
         .barbed-wire {
             margin-top: 40px;
@@ -45,6 +46,20 @@
             height: 2px;
             background: url('barbed-wire.png') repeat-x;
             background-size: contain;
+        }
+
+        .background-clip-text {
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1.2;
+            color: transparent;
+            background: url('barb.jpg') no-repeat center center fixed;
+            background-size: cover;
+            -webkit-background-clip: text;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+            background-position: center 50px; /* Shift the background to expose a different part through the text */
         }
 
         p {
@@ -59,12 +74,12 @@
             color: #f2f2f2;
             text-decoration: none;
             font-weight: bold;
-            border-bottom: 1px solid #ff003c;
+            border-bottom: 1px solid rgb(105, 66, 43);
             transition: all 0.3s ease;
         }
 
         a:hover {
-            color: #ff003c;
+            color: rgb(105, 66, 43);
             border-bottom: 1px solid #f2f2f2;
         }
 
@@ -72,6 +87,16 @@
             margin-top: 40px;
             font-size: 0.9rem;
             color: #555;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .soundcloud-links {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -80,11 +105,15 @@
     <div class="container">
         <div class="barbed-wire"></div>
 
-        <p>
-          quiet i'm sleeping
+        <p class="background-clip-text">
+            quiet i'm sleeping
         </p>
 
         <div class="barbed-wire"></div>
+
+        <div class="soundcloud-links">
+            <a href="https://soundcloud.com/myceelia" target="_blank">Listen on SoundCloud</a>
+        </div>
 
         <footer>
             &copy; 2024 Myceelia. All rights reserved. | <a href="mailto:contact@myceelia.com">Contact</a>
@@ -92,3 +121,4 @@
     </div>
 </body>
 </html>
+
