@@ -1,10 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>myceelia</title>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myceelia</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #f2f2f2;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #ff003c;
+            position: relative;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background-color: #ff003c;
+        }
+
+        .barbed-wire {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            display: block;
+            height: 2px;
+            background: url('barbed-wire.png') repeat-x;
+            background-size: contain;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid #ff003c;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff003c;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Myceelia</h1>
+
+        <div class="barbed-wire"></div>
+
+        <p>
+          quiet i'm sleeping
+        </p>
+
+        <div class="barbed-wire"></div>
+
+        <footer>
+            &copy; 2024 Myceelia. All rights reserved. | <a href="mailto:contact@myceelia.com">Contact</a>
+        </footer>
+    </div>
+</body>
 </html>
