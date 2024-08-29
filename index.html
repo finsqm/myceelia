@@ -20,23 +20,46 @@
             font-style: normal;
         }
 
-        .container {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            overflow: hidden;
-            flex-direction: column;
-            z-index: 2;
+        .container {  
+          justify-items: center;
+          display: grid;
+          height: 100%;
+          width: 100%;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1.8fr 0.1fr 1.8fr;
+          gap: 0px 0px;
+          grid-auto-flow: row;
+          grid-template-areas:
+            "header header header"
+            ". middle ."
+            "footer footer footer";
         }
 
+        .footer {
+          justify-self: stretch;
+          align-self: end;
+          grid-area: footer;
+          color: grey;
+          text-align: right;
+        }
+
+        .header {
+          align-self: start;
+          grid-area: header;
+          text-align: center;
+        }
+
+        .middle { grid-area: middle; }
+
         h1 {
-            font-size: 3rem;
-            letter-spacing: 0.8em;
+            font-size: clamp(1rem, 6vw, 5rem); /* Adjust these values based on your needs */
+            letter-spacing: 1em;
+            /* white-space: nowrap; /* Prevents the text from wrapping */ */
+            /* overflow: hidden; /* Ensures text doesn't spill out of the container */ */
+            /* text-overflow: ellipsis; /* Optional: Adds an ellipsis if the text overflows */ */
             text-transform: lowercase;
             margin: 0;
-            background: url('deactivated-account-kzypMbyUxJg-unsplash.jpg') no-repeat center center;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('deactivated-account-kzypMbyUxJg-unsplash.jpg') no-repeat center center;
             background-size: cover;
             -webkit-background-clip: text;
             background-clip: text;
@@ -47,23 +70,22 @@
           color: white;
         }
 
-        .footer {
-          color: white;
+        .soundcloud-links {
         }
 
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="item">
+        <h1 class="header">
             quiet, i'm sleeping
         </h1>
 
-        <div class="item soundcloud-links">
+        <div class="middle soundcloud-links">
             <a href="https://soundcloud.com/myceelia" target="_blank">sounds</a>
         </div>
 
-        <div class="item footer">
+        <div class="footer">
           <footer>
               &copy; 2024 myceelia. All rights reserved. | <a href="mailto:contact@myceelia.com">Contact</a>
           </footer>
